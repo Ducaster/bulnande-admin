@@ -1,15 +1,16 @@
 "use client";
 
 import React from "react";
-import { Breadcrumb, Layout, Menu, theme } from "antd";
+import { Layout, Menu, theme } from "antd";
 import LongCard from "./components/longterm";
+import styled from "styled-components";
 
 const { Header, Content, Footer } = Layout;
 
-const items = new Array(3).fill(null).map((_, index) => ({
-  key: String(index + 1),
-  label: `nav ${index + 1}`,
-}));
+const items = [
+  { key: "1", label: "장기프로젝트" },
+  { key: "2", label: "단기프로젝트" },
+];
 
 const App: React.FC = () => {
   const {
@@ -25,10 +26,16 @@ const App: React.FC = () => {
           zIndex: 1,
           width: "100%",
           display: "flex",
-          alignItems: "center",
+          alignItems: "left",
         }}
       >
-        <div className="demo-logo" />
+        <Logo>
+          <img
+            src="/logo_redwhite.png"
+            alt="Logo"
+            style={{ maxWidth: "100%", maxHeight: "100%" }}
+          />
+        </Logo>
         <Menu
           theme="dark"
           mode="horizontal"
@@ -38,11 +45,6 @@ const App: React.FC = () => {
         />
       </Header>
       <Content style={{ padding: "0 48px" }}>
-        <Breadcrumb style={{ margin: "16px 0" }}>
-          <Breadcrumb.Item>Home</Breadcrumb.Item>
-          <Breadcrumb.Item>List</Breadcrumb.Item>
-          <Breadcrumb.Item>App</Breadcrumb.Item>
-        </Breadcrumb>
         <div
           style={{
             padding: 24,
@@ -62,3 +64,12 @@ const App: React.FC = () => {
 };
 
 export default App;
+
+const Logo = styled.div`
+  margin: 16px; /* 로고 주변 마진 설정 */
+  margin-right: 24px; /* 로고 오른쪽 마진 설정 */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  cursor: pointer;
+`;
