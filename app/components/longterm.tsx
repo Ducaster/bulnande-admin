@@ -33,10 +33,7 @@ const LongCard = () => {
           style={{ padding: 32 }}
         >
           {/* 텍스트 */}
-          <Typography.Title level={3}>
-            “antd is an enterprise-class UI design language and React UI
-            library.”
-          </Typography.Title>
+          <Typography.Title level={3}>하늘에 별따기</Typography.Title>
           {/* 버튼 */}
           <Button
             type="primary"
@@ -44,7 +41,7 @@ const LongCard = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            Get Started
+            수정하기
           </Button>
         </Flex>
       </Flex>
